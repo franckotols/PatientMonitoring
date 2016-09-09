@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">PatientMonitoring</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_visualizza_riepilogo">VisualizzaRiepilogo</string>
+
+
+    <string-array name="sex_list">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+
+    <!-- Service provider settings -->
+    <string name="default_url">http://192.168.173.1:8080</string>
+    <string name="preference_category_serviceSettings_title">Service Provider</string>
+    <string name="preference_category_serviceAddress_title">Indirizzo Service Provider</string>
+    <string name="preference_category_serviceAddress_summary">Inserire indirizzo url del servizio web che fornirà i dati</string>
+    <string name="preference_category_serviceAddress_dialogTitle">Inserisci indirizzo</string>
+    <string name="preference_category_serviceAddress_hint">es. http://192.168.173.1:8080</string>
+
+
+
+</resources>
