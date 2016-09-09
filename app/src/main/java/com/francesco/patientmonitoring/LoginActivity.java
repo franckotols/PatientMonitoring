@@ -104,11 +104,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onResponse(String response) {
 
+                        logResponse.setText("");
                         Toast.makeText(LoginActivity.this, response, Toast.LENGTH_LONG).show();
 
-                        /*Intent ii = new Intent (MainActivity.this, bookActivity.class);
-                        ii.putExtra("response", response);
-                        startActivity(ii);*/
+                        Intent ii = new Intent (LoginActivity.this, HomeActivity.class);
+                        //ii.putExtra("response", response);
+                        startActivity(ii);
 
                     }
                 },

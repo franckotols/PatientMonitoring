@@ -55,10 +55,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=""
         android:id="@+id/log_response"
         android:layout_below="@+id/tvRegisterLink"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp"/>
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>

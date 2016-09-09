@@ -37,6 +37,11 @@
             android:label="@string/title_activity_visualizza_riepilogo"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

@@ -19,7 +19,7 @@
     <string name="preference_category_serviceAddress_summary">Inserire indirizzo url del servizio web che fornirà i dati</string>
     <string name="preference_category_serviceAddress_dialogTitle">Inserisci indirizzo</string>
     <string name="preference_category_serviceAddress_hint">es. http://192.168.173.1:8080</string>
-
+    <string name="title_activity_home">HomeActivity</string>
 
 
 </resources>
