@@ -1,12 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
+<items version="2" />
 
-    <item
-        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="23.0.3"
-        sha1="25347cffbcdeb4c0b3b4393a6a1ed86dfa1a2c6b">
-        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_8771a24a602090c1225723d53b11ff15b0560423.jar" />
-    </item>
-
-</items>

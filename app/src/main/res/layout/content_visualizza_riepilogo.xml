@@ -79,8 +79,18 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
-            android:id="@+id/riep_birth"
+            android:id="@+id/riep_spec"
             android:layout_below="@+id/riep_sex"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/riep_birth"
+            android:layout_below="@+id/riep_spec"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"/>
 

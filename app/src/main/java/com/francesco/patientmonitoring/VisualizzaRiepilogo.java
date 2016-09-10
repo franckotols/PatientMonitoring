@@ -35,6 +35,7 @@ public class VisualizzaRiepilogo extends AppCompatActivity {
     private TextView tvUsername;
     private TextView tvPassword;
     private TextView tvSex;
+    private TextView tvSpec;
     private TextView tvBirthdate;
     private TextView tvTaxcode;
     private TextView tvEmailaddress;
@@ -56,6 +57,7 @@ public class VisualizzaRiepilogo extends AppCompatActivity {
         tvUsername = (TextView) findViewById(R.id.riep_user);
         tvPassword = (TextView) findViewById(R.id.riep_pass);
         tvSex = (TextView) findViewById(R.id.riep_sex);
+        tvSpec = (TextView) findViewById(R.id.riep_spec);
         tvBirthdate = (TextView) findViewById(R.id.riep_birth);
         tvTaxcode = (TextView) findViewById(R.id.riep_tax);
         tvEmailaddress = (TextView) findViewById(R.id.riep_mail);
@@ -97,6 +99,12 @@ public class VisualizzaRiepilogo extends AppCompatActivity {
             String sex_full = ("Sex: " + sex);
             tvSex.setText(sex_full);
             if (sex.equals(""))
+                formFilled = false;
+
+            String spec = user_data_OBJ.getString("specializzazione");
+            String spec_full = ("Specializzazione: " + spec);
+            tvSpec.setText(spec_full);
+            if (spec.equals(""))
                 formFilled = false;
 
             int d = user_data_OBJ.getInt("day");
