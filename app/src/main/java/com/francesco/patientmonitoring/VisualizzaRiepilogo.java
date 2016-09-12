@@ -32,13 +32,11 @@ public class VisualizzaRiepilogo extends AppCompatActivity {
     SharedPreferences pref;
     private  TextView tvFirstname;
     private TextView tvLastname;
-    private TextView tvUsername;
+    private TextView tvEmailaddress;
     private TextView tvPassword;
     private TextView tvSex;
     private TextView tvSpec;
     private TextView tvBirthdate;
-    private TextView tvTaxcode;
-    private TextView tvEmailaddress;
     private TextView tvPhonenumber;
     private Button bRegistra;
     private TextView tvResponse;
@@ -54,17 +52,16 @@ public class VisualizzaRiepilogo extends AppCompatActivity {
         final String user_data_STRING = intento.getStringExtra(RegisterActivity.EXTRA_MESSAGE);
         tvFirstname = (TextView) findViewById(R.id.riep_first);
         tvLastname = (TextView) findViewById(R.id.riep_last);
-        tvUsername = (TextView) findViewById(R.id.riep_user);
+        tvEmailaddress = (TextView) findViewById(R.id.riep_mail);
         tvPassword = (TextView) findViewById(R.id.riep_pass);
         tvSex = (TextView) findViewById(R.id.riep_sex);
         tvSpec = (TextView) findViewById(R.id.riep_spec);
         tvBirthdate = (TextView) findViewById(R.id.riep_birth);
-        tvTaxcode = (TextView) findViewById(R.id.riep_tax);
-        tvEmailaddress = (TextView) findViewById(R.id.riep_mail);
         tvPhonenumber = (TextView) findViewById(R.id.riep_phone);
         bRegistra = (Button) findViewById(R.id.registra);
         tvResponse = (TextView) findViewById(R.id.riep_response);
         Boolean formFilled = true;
+        Boolean checkPassword = false;
 
 
 
@@ -83,17 +80,26 @@ public class VisualizzaRiepilogo extends AppCompatActivity {
             if (last_name.equals(""))
                 formFilled = false;
 
-            String user = user_data_OBJ.getString("user");
-            String user_full = ("User Name: " + user);
-            tvUsername.setText(user_full);
-            if (user.equals(""))
+            String email = user_data_OBJ.getString("email");
+            String email_full = ("e-mail: " + email);
+            tvEmailaddress.setText(email_full);
+            if (email.equals(""))
                 formFilled = false;
+
 
             String password = user_data_OBJ.getString("password");
             String password_full = ("Password: " + password);
             tvPassword.setText(password_full);
             if (password.equals(""))
                 formFilled = false;
+
+            String check_Password = user_data_OBJ.getString("checkpassword");
+            if (check_Password.equals(""))
+                formFilled = false;
+
+            if (check_Password.equals(password)){
+                checkPassword = true;
+            }
 
             String sex = user_data_OBJ.getString("sex");
             String sex_full = ("Sex: " + sex);
@@ -116,15 +122,6 @@ public class VisualizzaRiepilogo extends AppCompatActivity {
             if (birthdate.equals(""))
                 formFilled = false;
 
-            String tax_code = user_data_OBJ.getString("tax_code");
-            String tax_code_full = ("TAX Code: " + tax_code);
-            tvTaxcode.setText(tax_code_full);
-            if (tax_code.equals(""))
-                formFilled = false;
-
-            String email = user_data_OBJ.getString("email");
-            String email_full = ("e-mail: " + email);
-            tvEmailaddress.setText(email_full);
 
             String phone = user_data_OBJ.getString("phone");
             String phone_full = ("Phone Number: " + phone);
@@ -137,10 +134,11 @@ public class VisualizzaRiepilogo extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        if (formFilled == true) {
+        if (formFilled && checkPassword) {
 
             pref = PreferenceManager.getDefaultSharedPreferences(this);
-            final String finalServer_addr = pref.getString("service_provider", "");
+            final String server_addr = pref.getString("service_provider", "");
+            final String finalServer_addr = server_addr + "/registration";
 
             bRegistra.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -209,11 +207,16 @@ public class VisualizzaRiepilogo extends AppCompatActivity {
                 }
             });
         }
-        else {
+        else if (!checkPassword && formFilled){
+            tvResponse.setText("Le password inserite sono diverse.");
+            tvResponse.setTextColor(Color.RED);
+            bRegistra.setEnabled(false);
+        }
 
+        else {
             tvResponse.setText("Information missing!\nPlease, go back and fill all the required fields.");
             tvResponse.setTextColor(Color.RED);
-
+            bRegistra.setEnabled(false);
         }
 
     }

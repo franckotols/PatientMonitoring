@@ -99,7 +99,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         final String username_string = etUsername.getText().toString();
         final String password_string = etPassword.getText().toString();
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+        final String final_addr = url+"/authentication";
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, final_addr,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

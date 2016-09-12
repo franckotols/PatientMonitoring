@@ -49,10 +49,11 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
-            android:id="@+id/riep_user"
+            android:id="@+id/riep_mail"
             android:layout_below="@+id/riep_last"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"/>
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -60,7 +61,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:id="@+id/riep_pass"
-            android:layout_below="@+id/riep_user"
+            android:layout_below="@+id/riep_mail"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"/>
 
@@ -94,25 +95,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text=""
-            android:id="@+id/riep_tax"
-            android:layout_below="@+id/riep_birth"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text=""
-            android:id="@+id/riep_mail"
-            android:layout_below="@+id/riep_tax"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -120,7 +102,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:id="@+id/riep_phone"
-            android:layout_below="@+id/riep_mail"
+            android:layout_below="@+id/riep_birth"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"/>
 
