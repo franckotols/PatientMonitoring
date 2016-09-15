@@ -1,25 +1,50 @@
 <resources>
+
+    <!--Titles screens-->
     <string name="app_name">PatientMonitoring</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_visualizza_riepilogo">VisualizzaRiepilogo</string>
-
-
-    <string-array name="sex_list">
-        <item>Male</item>
-        <item>Female</item>
-    </string-array>
-
+    <string name="home_label">Home</string>
 
     <!-- Service provider settings -->
-    <string name="default_url">http://192.168.173.1:8080</string>
+    <string name="default_url">http://192.168.173.1:9090</string>
     <string name="preference_category_serviceSettings_title">Service Provider</string>
     <string name="preference_category_serviceAddress_title">Indirizzo Service Provider</string>
     <string name="preference_category_serviceAddress_summary">Inserire indirizzo url del servizio web che fornirà i dati</string>
     <string name="preference_category_serviceAddress_dialogTitle">Inserisci indirizzo</string>
-    <string name="preference_category_serviceAddress_hint">es. http://192.168.173.1:8080</string>
+    <string name="preference_category_serviceAddress_hint">es. http://192.168.173.1:9090</string>
     <string name="title_activity_home">HomeActivity</string>
+
+    <!-- Registration Activity -->
+    <string name="first_line">Inserisci i campi</string>
+    <string name="second_line">(I campi contrassegnati da * sono obbligatori)</string>
+    <string name="first_name_hint">(*) Nome</string>
+    <string name="last_name_hint">(*) Cognome</string>
+    <string name="email_hint">(*) Indirizzo e-mail. L\'indirizzo mail verrà usato come username</string>
+    <string name="password_hint">(*) Password</string>
+    <string name="check_password_hint">(*) Ripeti Password</string>
+    <string name="tv_sex"> (*) Sesso</string>
+    <string name="sex_spinner_text">Sesso</string>
+    <string-array name="sex_list">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string name="tv_specializazzione"> (*) Specializzazione</string>
+    <string name="spec_spinner_text">Specializzazione</string>
+    <string name="data_label_text"> (*) Data di nascita</string>
+    <string name="tv_phone">(*) Telefono</string>
+    <string name="text_button_next">Continua</string>
+
+    <!-- Home activity-->
+    <string name="title_first_tab">Notifiche</string>
+    <string name="title_second_tab">Ricerca Paziente</string>
+    <string name="title_third_tab">Altro</string>
+
+    <!-- Search Patient activity-->
+    <string name="title_patient_disease">Seleziona le patologie di interesse</string>
+
 
 
 </resources>
