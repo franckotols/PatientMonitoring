@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="75dp">
+
+    <TextView
+        android:id="@+id/tx_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_alignLeft="@+id/tx_name"
+        android:layout_alignStart="@+id/tx_name">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tx_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4">
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Nome"
+        android:id="@+id/textView3"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_below="@+id/tx_username"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Username"
+        android:id="@+id/textView4"
+        android:layout_alignTop="@+id/button"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vai"
+        android:id="@+id/list_item_button"
+        android:layout_marginRight="39dp"
+        android:layout_marginEnd="39dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+
+
+</RelativeLayout>

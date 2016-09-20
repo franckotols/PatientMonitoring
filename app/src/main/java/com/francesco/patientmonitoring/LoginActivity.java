@@ -172,9 +172,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.bSignIn:
                 sendLogin();
                 break;
-            /*case R.id.post_button:
-                sendData();
-                break;*/
         }
 
     }
