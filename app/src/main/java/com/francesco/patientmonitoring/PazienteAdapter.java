@@ -54,6 +54,11 @@ public class PazienteAdapter extends ArrayAdapter {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(getContext(), "Bottone in posizione "+position, Toast.LENGTH_SHORT).show();
+                    /**
+                     * per passare all'activity specifica del paziente
+                     */
+                    Intent intent= new Intent(getContext(), HomePaziente.class);
+                    getContext().startActivity(intent);
 
                 }
             });

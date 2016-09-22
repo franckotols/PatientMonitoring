@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Username"
+        android:hint="@string/log_hint_mail"
         android:layout_above="@+id/etPassword"
         android:layout_alignLeft="@+id/etPassword"
         android:layout_alignStart="@+id/etPassword"/>
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/log_hint_password"
         android:inputType="textPassword"
         android:layout_above="@+id/bSignIn"
         android:layout_centerHorizontal="true"/>
@@ -39,7 +39,7 @@
         android:id="@+id/bSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign In"
+        android:text="@string/log_text_accedi"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
 
@@ -47,16 +47,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Register Here"
+        android:text="@string/log_text_registra"
         android:id="@+id/tvRegisterLink"
         android:layout_below="@+id/bSignIn"
         android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/log_response"
-        android:layout_below="@+id/tvRegisterLink"
-        android:layout_centerHorizontal="true"/>
 </RelativeLayout>

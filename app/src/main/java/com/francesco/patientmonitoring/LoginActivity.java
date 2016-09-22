@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private EditText etUsername;
     private EditText etPassword;
-    private TextView logResponse;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
-        logResponse = (TextView) findViewById(R.id.log_response);
         final TextView tvRegisterLink = (TextView) findViewById(R.id.tvRegisterLink);
         final Button bLogin = (Button) findViewById(R.id.bSignIn);
 
@@ -105,9 +104,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onResponse(String response) {
 
-                        logResponse.setText("");
-                        Toast.makeText(LoginActivity.this, response, Toast.LENGTH_LONG).show();
-
+                        Toast.makeText(LoginActivity.this, getString(R.string.toast_login_succesful), Toast.LENGTH_LONG).show();
                         Intent ii = new Intent (LoginActivity.this, HomeActivity.class);
                         //ii.putExtra("response", response);
                         startActivity(ii);
@@ -117,13 +114,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        //Toast.makeText(LoginActivity.this, error.toString(), Toast.LENGTH_LONG).show();
-                        System.out.println("Something went wrong!");
+
                         NetworkResponse err_ = error.networkResponse;
-                        String display_err_user_msg="\n\n\nError in sending request.";
+                        //String display_err_user_msg="\n\n\nError in sending request.";
                         if(err_ != null && err_.data != null) {
-                            int err_status_code = err_.statusCode;
-                            String err_status_code_str = ("" + err_status_code);
+                            //int err_status_code = err_.statusCode;
+                            //String err_status_code_str = ("" + err_status_code);
                             String err_stringa = new String(err_.data);
                             String err_msg = "";
                             int err_stringa_A = err_stringa.indexOf("<p>");
@@ -131,19 +127,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             int err_stringa_B = err_stringa.indexOf("</p>");
                             if (err_stringa_A > 0 && err_stringa_B > err_stringa_A && err_stringa_B <= err_stringa.length()) {
                                 err_msg = err_stringa.substring(err_stringa_A, err_stringa_B);
-                                System.out.println(err_msg);
                             }
-                            display_err_user_msg = (display_err_user_msg + "\n\nSTATUS CODE: " + err_status_code_str + "\nError Message:\n" + err_msg);
+                            if (err_msg.equals("wrong_params")) {
+                                Toast.makeText(LoginActivity.this, getString(R.string.toast_user_password_wrong), Toast.LENGTH_LONG).show();
+                            }
                         }
                         else{
-                            display_err_user_msg = (display_err_user_msg+"\n\nPossible causes:\nServer Address is incorrect;\nServer is down.");
+                            Toast.makeText(LoginActivity.this, getString(R.string.toast_server_wrong), Toast.LENGTH_LONG).show();
                         }
 
                         error.printStackTrace();
-
-                        logResponse.setText(display_err_user_msg);
-                        logResponse.setTextColor(Color.RED);
-
 
                         }
                 }) {

@@ -133,8 +133,6 @@ public class RicercaPaziente extends AppCompatActivity implements View.OnClickLi
         //populating listView
         listView=(ListView)findViewById(R.id.listv);
         pazienteAdapter = new PazienteAdapter(this,R.layout.patient_list_layout);
-        //items=new ArrayList<String>();
-        //adapter=new ArrayAdapter(this, R.layout.patient_list_layout,R.id.txt,items);
         listView.setAdapter(pazienteAdapter);
 
         /**
@@ -163,9 +161,10 @@ public class RicercaPaziente extends AppCompatActivity implements View.OnClickLi
                             String username, name;
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jsonObj = jsonArray.getJSONObject(i);
-                                //items.add(jsonObj.getString("userName"));
                                 username = jsonObj.getString("userName");
                                 name = jsonObj.getString("name");
+                                //properties
+
                                 Pazienti paziente = new Pazienti(username,name);
                                 pazienteAdapter.add(paziente);
                             }
@@ -183,7 +182,31 @@ public class RicercaPaziente extends AppCompatActivity implements View.OnClickLi
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                         Toast.makeText(RicercaPaziente.this, error.toString(), Toast.LENGTH_LONG).show();
+
+                        NetworkResponse err_ = error.networkResponse;
+                        //String display_err_user_msg="\n\n\nError in sending request.";
+                        if(err_ != null && err_.data != null) {
+                            //int err_status_code = err_.statusCode;
+                            //String err_status_code_str = ("" + err_status_code);
+                            /**
+                             * elaborazione del file html della risposta del server
+                             * per estrapolare il return del web service
+                             */
+                            String err_stringa = new String(err_.data);
+                            String err_msg = "";
+                            int err_stringa_A = err_stringa.indexOf("<p>");
+                            err_stringa_A = err_stringa_A + ("<p>").length();
+                            int err_stringa_B = err_stringa.indexOf("</p>");
+                            if (err_stringa_A > 0 && err_stringa_B > err_stringa_A && err_stringa_B <= err_stringa.length()) {
+                                err_msg = err_stringa.substring(err_stringa_A, err_stringa_B);
+                            }
+                            if (err_msg.equals("no_selected")) {
+                                Toast.makeText(RicercaPaziente.this, getString(R.string.toast_no_patient), Toast.LENGTH_LONG).show();
+                            }
+                        }
+                        else{
+                            Toast.makeText(RicercaPaziente.this, error.toString(), Toast.LENGTH_LONG).show();
+                        }
 
                     }
                 }) {

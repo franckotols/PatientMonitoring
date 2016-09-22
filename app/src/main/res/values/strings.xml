@@ -17,6 +17,15 @@
     <string name="preference_category_serviceAddress_hint">es. http://192.168.173.1:9090</string>
     <string name="title_activity_home">HomeActivity</string>
 
+    <!-- Login Activity -->
+    <string name="log_hint_mail">Email</string>
+    <string name="log_hint_password">Password</string>
+    <string name="log_text_accedi">Accedi</string>
+    <string name="log_text_registra">Registrati</string>
+    <string name="toast_user_password_wrong">Errore!\nUsername e/o password errati.</string>
+    <string name="toast_server_wrong">Errore! Possibili cause:\nIndirizzo del server sbagliato;\nIl server è spento.</string>
+    <string name="toast_login_succesful">Il login è andato a buon fine.</string>
+
     <!-- Registration Activity -->
     <string name="first_line">Inserisci i campi</string>
     <string name="second_line">(I campi contrassegnati da * sono obbligatori)</string>
@@ -37,6 +46,9 @@
     <string name="tv_phone">(*) Telefono</string>
     <string name="text_button_next">Continua</string>
 
+    <!-- VisualizzaRiepilogo activity -->
+    <string name="text_reg_button">Registra</string>
+
     <!-- Home activity-->
     <string name="title_first_tab">Notifiche</string>
     <string name="title_second_tab">Ricerca Paziente</string>
@@ -44,6 +56,11 @@
 
     <!-- Search Patient activity-->
     <string name="title_patient_disease">Seleziona le patologie di interesse</string>
+    <string name="title_patient_name">Nome paziente</string>
+    <string name="hint_patient_name">Inserisci nome paziente</string>
+    <string name="button_search">Cerca</string>
+
+    <string name="toast_no_patient">La ricerca non ha prodotto risultati.</string>
 
 
 </resources>
