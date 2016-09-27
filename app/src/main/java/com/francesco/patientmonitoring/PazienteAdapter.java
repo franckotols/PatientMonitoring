@@ -49,6 +49,7 @@ public class PazienteAdapter extends ArrayAdapter {
             patientHolder = new PatientHolder();
             patientHolder.tx_username = (TextView) row.findViewById(R.id.tx_username);
             patientHolder.tx_name = (TextView) row.findViewById(R.id.tx_name);
+            patientHolder.tx_birthdate = (TextView) row.findViewById(R.id.tx_birthdate);
             patientHolder.listItemBtn = (Button) row.findViewById(R.id.list_item_button);
             patientHolder.listItemBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -71,13 +72,14 @@ public class PazienteAdapter extends ArrayAdapter {
         Pazienti pazienti =(Pazienti)this.getItem(position);
         patientHolder.tx_username.setText(pazienti.getUsername());
         patientHolder.tx_name.setText(pazienti.getName());
+        patientHolder.tx_birthdate.setText(pazienti.getBirthdate());
 
         return row;
     }
 
     static class PatientHolder{
 
-        TextView tx_username, tx_name;
+        TextView tx_username, tx_name, tx_birthdate;
         Button listItemBtn;
 
     }

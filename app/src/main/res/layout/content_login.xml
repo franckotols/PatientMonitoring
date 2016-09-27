@@ -22,8 +22,7 @@
         android:ems="10"
         android:hint="@string/log_hint_mail"
         android:layout_above="@+id/etPassword"
-        android:layout_alignLeft="@+id/etPassword"
-        android:layout_alignStart="@+id/etPassword"/>
+        android:layout_centerHorizontal="true"/>
 
     <EditText
         android:id="@+id/etPassword"
@@ -41,7 +40,8 @@
         android:layout_height="wrap_content"
         android:text="@string/log_text_accedi"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_alignRight="@+id/tvRegisterLink"
+        android:layout_alignEnd="@+id/tvRegisterLink"/>
 
     <TextView
         android:layout_width="wrap_content"

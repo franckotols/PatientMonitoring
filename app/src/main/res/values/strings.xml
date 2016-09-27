@@ -62,5 +62,9 @@
 
     <string name="toast_no_patient">La ricerca non ha prodotto risultati.</string>
 
+    <!--Home Paziente-->
+
+    <string name="valori_medi">Valori medi</string>
+
 
 </resources>

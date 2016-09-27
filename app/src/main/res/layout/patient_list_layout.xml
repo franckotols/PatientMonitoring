@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="75dp">
+              android:layout_height="120dp">
 
     <TextView
         android:id="@+id/tx_username"
@@ -45,7 +45,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Username"
         android:id="@+id/textView4"
-        android:layout_alignTop="@+id/button"
+        android:layout_alignTop="@+id/list_item_button"
         android:layout_alignLeft="@+id/textView3"
         android:layout_alignStart="@+id/textView3"/>
 
@@ -60,6 +60,27 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Data di nascita"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/tx_birthdate"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_toRightOf="@+id/tx_name"
+        android:layout_toEndOf="@+id/tx_name"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp"/>
 
 
 </RelativeLayout>

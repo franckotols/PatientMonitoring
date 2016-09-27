@@ -5,11 +5,12 @@ package com.francesco.patientmonitoring;
  */
 public class Pazienti {
 
-    private String username, name;
+    private String username, name, birthdate;
 
-    public Pazienti(String username, String name) {
+    public Pazienti(String username, String name, String birthdate) {
         this.username = username;
         this.name = name;
+        this.birthdate = birthdate;
     }
 
     public String getUsername() {
@@ -26,5 +27,13 @@ public class Pazienti {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(String birthdate) {
+        this.birthdate = birthdate;
     }
 }
