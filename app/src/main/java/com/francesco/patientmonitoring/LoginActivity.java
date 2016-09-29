@@ -131,6 +131,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             if (err_msg.equals("wrong_params")) {
                                 Toast.makeText(LoginActivity.this, getString(R.string.toast_user_password_wrong), Toast.LENGTH_LONG).show();
                             }
+                            if (err_msg.equals("no_server")) {
+                                Toast.makeText(LoginActivity.this, getString(R.string.toast_server_wrong), Toast.LENGTH_LONG).show();
+                            }
+
                         }
                         else{
                             Toast.makeText(LoginActivity.this, getString(R.string.toast_server_wrong), Toast.LENGTH_LONG).show();

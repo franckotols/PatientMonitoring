@@ -61,6 +61,7 @@
     <string name="button_search">Cerca</string>
 
     <string name="toast_no_patient">La ricerca non ha prodotto risultati.</string>
+    <string name="toast_no_server">Il Server è spento.</string>
 
     <!--Home Paziente-->
 

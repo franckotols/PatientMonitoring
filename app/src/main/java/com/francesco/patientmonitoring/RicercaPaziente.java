@@ -66,8 +66,6 @@ public class RicercaPaziente extends AppCompatActivity implements View.OnClickLi
      */
     private JSONObject jsonServerResp;
     PazienteAdapter pazienteAdapter;
-    ArrayAdapter<String> adapter;
-    ArrayList<String> items;
     ListView listView;
 
 
@@ -204,6 +202,9 @@ public class RicercaPaziente extends AppCompatActivity implements View.OnClickLi
                             }
                             if (err_msg.equals("no_selected")) {
                                 Toast.makeText(RicercaPaziente.this, getString(R.string.toast_no_patient), Toast.LENGTH_LONG).show();
+                            }
+                            if (err_msg.equals("no_server")) {
+                                Toast.makeText(RicercaPaziente.this, getString(R.string.toast_no_server), Toast.LENGTH_LONG).show();
                             }
                         }
                         else{
