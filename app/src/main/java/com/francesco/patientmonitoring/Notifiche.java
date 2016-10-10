@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.util.AsyncListUtil;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -15,6 +16,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.RequestFuture;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -23,6 +25,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class Notifiche extends AppCompatActivity {
 
@@ -61,7 +66,9 @@ public class Notifiche extends AppCompatActivity {
 
         /**
          * parte REST per riempire la sezione dei checkBox relativi alle varie malattie (GET)
+         * In questo caso la richiesta deve essere sincrona
          */
+
         JsonObjectRequest jobjRequest = new JsonObjectRequest(Request.Method.GET, final_addr,
                 new Response.Listener<JSONObject>() {
                     @Override
@@ -76,7 +83,7 @@ public class Notifiche extends AppCompatActivity {
                                 JSONObject jsonObj = jsonArray.getJSONObject(i);
                                 patient_name = jsonObj.getString("assetName");
                                 date = jsonObj.getString("eventDate");
-                                type = jsonObj.getString("eventType");
+                                type = jsonObj.getString("type");
                                 message = jsonObj.getString("message");
 
                                 Alerts alert = new Alerts(patient_name,date,type,message);
@@ -100,4 +107,9 @@ public class Notifiche extends AppCompatActivity {
         requestQueue.add(jobjRequest);
 
     }
+
+
+
 }
+
+

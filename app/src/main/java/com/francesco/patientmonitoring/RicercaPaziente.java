@@ -156,16 +156,18 @@ public class RicercaPaziente extends AppCompatActivity implements View.OnClickLi
                             //trasforma la stringa in oggetto json
                             jsonServerResp = new JSONObject(response);
                             JSONArray jsonArray = jsonServerResp.getJSONArray("server_response");
-                            String username, name, birthdate;
+                            String name, city, birthdate, pat_id;
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject jsonObj = jsonArray.getJSONObject(i);
                                 JSONObject properties = jsonObj.getJSONObject("properties");
-                                username = jsonObj.getString("userName");
+                                //username = jsonObj.getString("userName");
                                 name = jsonObj.getString("name");
                                 //properties
+                                city = properties.getString("city");
                                 birthdate = properties.getString("birthdate");
+                                pat_id = jsonObj.getString("id");
 
-                                Pazienti paziente = new Pazienti(username,name,birthdate);
+                                Pazienti paziente = new Pazienti(name,city,birthdate,pat_id);
                                 pazienteAdapter.add(paziente);
                             }
                         } catch (JSONException e) {

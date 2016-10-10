@@ -5,32 +5,29 @@ package com.francesco.patientmonitoring;
  */
 public class Pazienti {
 
-    private String username, name, birthdate;
+    private String full_name, città, birthdate, pat_id;
 
-    public Pazienti(String username, String name, String birthdate) {
-        this.username = username;
-        this.name = name;
+    public Pazienti(String full_name, String città, String birthdate, String pat_id) {
+        this.full_name = full_name;
+        this.città = città;
         this.birthdate = birthdate;
+        this.pat_id = pat_id;
     }
 
-    public String getUsername() {
-
-        return username;
+    public String getFull_name() {
+        return full_name;
     }
 
-    public void setUsername(String username) {
-
-        this.username = username;
+    public void setFull_name(String full_name) {
+        this.full_name = full_name;
     }
 
-    public String getName() {
-
-        return name;
+    public String getCittà() {
+        return città;
     }
 
-    public void setName(String name) {
-
-        this.name = name;
+    public void setCittà(String città) {
+        this.città = città;
     }
 
     public String getBirthdate() {
@@ -38,7 +35,14 @@ public class Pazienti {
     }
 
     public void setBirthdate(String birthdate) {
-
         this.birthdate = birthdate;
+    }
+
+    public String getPat_id() {
+        return pat_id;
+    }
+
+    public void setPat_id(String pat_id) {
+        this.pat_id = pat_id;
     }
 }

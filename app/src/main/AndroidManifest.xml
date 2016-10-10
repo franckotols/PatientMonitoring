@@ -55,6 +55,10 @@
         </activity>
         <activity android:name=".HomePaziente">
         </activity>
+        <activity android:name=".ParametriActivity">
+        </activity>
+        <activity android:name=".DiarioMedico">
+        </activity>
     </application>
 
 </manifest>

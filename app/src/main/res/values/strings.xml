@@ -14,7 +14,7 @@
     <string name="preference_category_serviceAddress_title">Indirizzo Service Provider</string>
     <string name="preference_category_serviceAddress_summary">Inserire indirizzo url del servizio web che fornirà i dati</string>
     <string name="preference_category_serviceAddress_dialogTitle">Inserisci indirizzo</string>
-    <string name="preference_category_serviceAddress_hint">es. http://192.168.173.1:9090</string>
+    <string name="preference_category_serviceAddress_hint">es. http://192.168.137.1:9090</string>
     <string name="title_activity_home">HomeActivity</string>
 
     <!-- Login Activity -->
@@ -66,6 +66,16 @@
     <!--Home Paziente-->
 
     <string name="valori_medi">Valori medi</string>
+
+
+    <!--Parametri Activity-->
+    <string-array name="mean_parametri_selector">
+        <item>Ultimo Giorno</item>
+        <item>Ultimi Tre Giorni</item>
+        <item>Ultima Settimana</item>
+        <item>Ultime Tre Settimane</item>
+        <item>Ultimo mese</item>
+    </string-array>
 
 
 </resources>

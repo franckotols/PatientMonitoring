@@ -14,24 +14,14 @@
 
     <ListView
         android:id="@+id/listv_alerts"
-        android:layout_width="926dp"
-        android:layout_height="406dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
     </ListView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Notifiche"
-        android:id="@+id/tv_notifiche"
-        android:layout_above="@+id/listv_alerts"
-        android:layout_alignLeft="@+id/listv_alerts"
-        android:layout_alignStart="@+id/listv_alerts"
-        android:layout_marginLeft="414dp"
-        android:layout_marginStart="414dp"/>
+
 
 
 </RelativeLayout>

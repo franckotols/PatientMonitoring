@@ -18,6 +18,7 @@ import java.util.List;
  */
 public class PazienteAdapter extends ArrayAdapter {
     List list = new ArrayList();
+
     public PazienteAdapter(Context context, int resource) {
         super(context, resource);
     }
@@ -40,6 +41,8 @@ public class PazienteAdapter extends ArrayAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
 
+        final Pazienti pazienti =(Pazienti)this.getItem(position);
+
         View row;
         row = convertView;
         PatientHolder patientHolder;
@@ -47,18 +50,21 @@ public class PazienteAdapter extends ArrayAdapter {
             LayoutInflater layoutInflater = (LayoutInflater)this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = layoutInflater.inflate(R.layout.patient_list_layout,parent,false);
             patientHolder = new PatientHolder();
-            patientHolder.tx_username = (TextView) row.findViewById(R.id.tx_username);
             patientHolder.tx_name = (TextView) row.findViewById(R.id.tx_name);
+            patientHolder.tx_city = (TextView) row.findViewById(R.id.tx_city);
             patientHolder.tx_birthdate = (TextView) row.findViewById(R.id.tx_birthdate);
             patientHolder.listItemBtn = (Button) row.findViewById(R.id.list_item_button);
             patientHolder.listItemBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(getContext(), "Bottone in posizione "+position, Toast.LENGTH_SHORT).show();
                     /**
                      * per passare all'activity specifica del paziente
                      */
                     Intent intent= new Intent(getContext(), HomePaziente.class);
+                    intent.putExtra("nome",pazienti.getFull_name());
+                    intent.putExtra("città",pazienti.getCittà());
+                    intent.putExtra("data_di_nascita",pazienti.getBirthdate());
+                    intent.putExtra("id",pazienti.getPat_id());
                     getContext().startActivity(intent);
 
                 }
@@ -69,9 +75,9 @@ public class PazienteAdapter extends ArrayAdapter {
             patientHolder = (PatientHolder)row.getTag();
         }
 
-        Pazienti pazienti =(Pazienti)this.getItem(position);
-        patientHolder.tx_username.setText(pazienti.getUsername());
-        patientHolder.tx_name.setText(pazienti.getName());
+
+        patientHolder.tx_name.setText(pazienti.getFull_name());
+        patientHolder.tx_city.setText(pazienti.getCittà());
         patientHolder.tx_birthdate.setText(pazienti.getBirthdate());
 
         return row;
@@ -79,7 +85,7 @@ public class PazienteAdapter extends ArrayAdapter {
 
     static class PatientHolder{
 
-        TextView tx_username, tx_name, tx_birthdate;
+        TextView tx_name, tx_city,tx_birthdate;
         Button listItemBtn;
 
     }

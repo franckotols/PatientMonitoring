@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/list_view">
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Letto!"
+        android:textColor="@color/white"
         android:id="@+id/cb_read"
-        android:layout_marginRight="55dp"
-        android:layout_marginEnd="55dp"
         android:checked="false"
-        android:layout_alignBaseline="@+id/tv_pat_name"
-        android:layout_alignBottom="@+id/tv_pat_name"
+        android:layout_above="@+id/tv_message"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>
 
@@ -32,6 +31,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Paziente:"
+        android:textColor="@color/white"
         android:id="@+id/textView11"
         android:layout_below="@+id/space1"
         android:layout_alignLeft="@+id/space1"
@@ -40,8 +40,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/space2"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Data:"
+        android:textColor="@color/white"
+        android:id="@+id/textView13"
         android:layout_below="@+id/textView11"
         android:layout_alignLeft="@+id/textView11"
         android:layout_alignStart="@+id/textView11"/>
@@ -50,17 +52,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Data:"
-        android:id="@+id/textView13"
-        android:layout_below="@+id/space2"
-        android:layout_alignLeft="@+id/space2"
-        android:layout_alignStart="@+id/space2"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/space3"
+        android:text="Tipo:"
+        android:textColor="@color/white"
+        android:id="@+id/textView15"
         android:layout_below="@+id/textView13"
         android:layout_alignLeft="@+id/textView13"
         android:layout_alignStart="@+id/textView13"/>
@@ -69,17 +63,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Tipo:"
-        android:id="@+id/textView15"
-        android:layout_below="@+id/space3"
-        android:layout_alignLeft="@+id/space3"
-        android:layout_alignStart="@+id/space3"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/space4"
+        android:text="Messaggio:"
+        android:textColor="@color/white"
+        android:id="@+id/textView16"
         android:layout_below="@+id/textView15"
         android:layout_alignLeft="@+id/textView15"
         android:layout_alignStart="@+id/textView15"/>
@@ -88,30 +74,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Messaggio:"
-        android:id="@+id/tv_message"
-        android:layout_below="@+id/space4"
-        android:layout_alignLeft="@+id/space4"
-        android:layout_alignStart="@+id/space4"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/space5"
-        android:layout_below="@+id/tv_message"
-        android:layout_alignLeft="@+id/tv_message"
-        android:layout_alignStart="@+id/tv_message"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
+        android:textColor="@color/white"
         android:id="@+id/tv_pat_name"
         android:layout_alignBottom="@+id/textView11"
-        android:layout_toRightOf="@+id/tv_message"
-        android:layout_toEndOf="@+id/tv_message"
+        android:layout_toRightOf="@+id/textView16"
+        android:layout_toEndOf="@+id/textView16"
         android:layout_marginLeft="102dp"
         android:layout_marginStart="102dp"/>
 
@@ -120,6 +88,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
+        android:textColor="@color/white"
         android:id="@+id/tv_date"
         android:layout_alignTop="@+id/textView13"
         android:layout_alignLeft="@+id/tv_pat_name"
@@ -130,6 +99,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
+        android:textColor="@color/white"
         android:id="@+id/tv_type"
         android:layout_alignTop="@+id/textView15"
         android:layout_alignLeft="@+id/tv_date"
@@ -140,8 +110,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
-        android:id="@+id/textView22"
-        android:layout_alignTop="@+id/tv_message"
+        android:textColor="@color/white"
+        android:id="@+id/tv_message"
+        android:layout_alignTop="@+id/textView16"
         android:layout_alignLeft="@+id/tv_type"
         android:layout_alignStart="@+id/tv_type"/>
 
