@@ -29,8 +29,7 @@
         </activity>
         <activity
             android:name=".Settings"
-            android:label="@string/title_activity_settings"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/title_activity_settings">
         </activity>
         <activity
             android:name=".VisualizzaRiepilogo"
@@ -53,11 +52,16 @@
             android:name=".Altro"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".HomePaziente">
+        <activity android:name=".HomePaziente"
+            android:label="@string/home_label">
         </activity>
-        <activity android:name=".ParametriActivity">
+        <activity android:name=".ParametriActivity"
+            android:label="@string/label_parametri"
+            android:parentActivityName=".HomePaziente">
         </activity>
         <activity android:name=".DiarioMedico">
+        </activity>
+        <activity android:name=".EsamiSangue">
         </activity>
     </application>
 

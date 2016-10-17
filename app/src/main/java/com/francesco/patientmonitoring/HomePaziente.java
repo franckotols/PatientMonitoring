@@ -60,6 +60,18 @@ public class HomePaziente extends AppCompatActivity {
             }
         });
 
+        analisiImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ii = new Intent(HomePaziente.this,EsamiSangue.class);
+                ii.putExtra("nome",nome);
+                ii.putExtra("città",city);
+                ii.putExtra("data_di_nascita",birthdate);
+                ii.putExtra("id",pat_id);
+                startActivity(ii);
+            }
+        });
+
 
     }
 }

@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Diario Clinico"
+                android:text="@string/diario_clinico"
                 android:id="@+id/textView2"
                 />
 
@@ -36,6 +36,7 @@
                 android:layout_height="250dp"
                 android:id="@+id/image_diario"
                 android:src="@drawable/medicalrecord"
+                android:contentDescription="@string/diario_clinico"
                 />
         </LinearLayout>
 
@@ -53,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Parametri"
+                android:text="@string/parametri"
                 android:id="@+id/textView6"
                 />
 
@@ -62,6 +63,7 @@
                 android:layout_height="250dp"
                 android:id="@+id/image_parametri"
                 android:src="@drawable/parametri"
+                android:contentDescription="@string/parametri"
                 />
 
         </LinearLayout>
@@ -80,7 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Parametri"
+                android:text="@string/esami_sangue"
                 android:id="@+id/textView7"
                 />
 
@@ -89,6 +91,7 @@
                 android:layout_height="250dp"
                 android:id="@+id/image_blood_analysis"
                 android:src="@drawable/blood_analysis"
+                android:contentDescription="@string/esami_sangue"
                 />
 
         </LinearLayout>

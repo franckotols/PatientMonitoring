@@ -1,34 +1,70 @@
 package com.francesco.patientmonitoring;
 
-import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
+
+import java.util.List;
+import java.util.Vector;
 
 public class ParametriActivity extends AppCompatActivity {
-
-    TextView tvNome;
-    TextView tvCity;
-    TextView tvBirthdate;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parametri);
 
-        tvNome = (TextView)findViewById(R.id.tv_nomePaziente);
-        tvCity = (TextView)findViewById(R.id.tv_cittàPaziente);
-        tvBirthdate = (TextView)findViewById(R.id.tv_birthPaziente);
 
-        Intent i = getIntent();
-        final String nome = i.getStringExtra("nome");
-        final String city = i.getStringExtra("città");
-        final String birthdate = i.getStringExtra("data_di_nascita");
 
-        tvNome.setText(nome);
-        tvCity.setText(city);
-        tvBirthdate.setText(birthdate);
+
+        List<Fragment> fragments = new Vector<>();
+        fragments.add(Fragment.instantiate(this, ParametriValoriMedi.class.getName()));
+        fragments.add(Fragment.instantiate(this, ParametriValoriPuntuali.class.getName()));
+        fragments.add(Fragment.instantiate(this, ParametriGrafici.class.getName()));
+
+        PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(),fragments);
+        final ViewPager pager = (ViewPager)findViewById(R.id.viewPager_parametri);
+        pager.setAdapter(adapter);
+
+        final ActionBar actionBar = getSupportActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        ActionBar.TabListener tabListener = new ActionBar.TabListener(){
+
+            @Override
+            public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft){
+                pager.setCurrentItem(tab.getPosition());
+
+            }
+
+            @Override
+            public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft){
+
+            }
+
+            @Override
+            public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft){
+
+            }
+
+        };
+
+        actionBar.addTab(actionBar.newTab().setText("Valori Medi").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("Valori Puntuali").setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setText("Grafici").setTabListener(tabListener));
+
+        pager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            public void onPageSelected(int position){
+                actionBar.setSelectedNavigationItem(position);
+            }
+        });
+
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
     }
