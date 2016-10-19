@@ -1,21 +1,15 @@
 package com.francesco.patientmonitoring;
 
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.support.v7.preference.PreferenceFragmentCompat;
 
-public class Settings extends PreferenceActivity {
+
+public class Settings extends PreferenceFragmentCompat {
 
     @SuppressWarnings("deprecation")
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // this following line must be always after super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.settings_menu);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootkey) {
+        setPreferencesFromResource(R.xml.settings_menu, rootkey);
 
     }
 

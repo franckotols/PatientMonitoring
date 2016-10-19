@@ -84,7 +84,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent settingsIntent = new Intent(LoginActivity.this, Settings.class);
+            Intent settingsIntent = new Intent(LoginActivity.this, SettingsActivity.class);
             startActivity(settingsIntent);
         }
 
