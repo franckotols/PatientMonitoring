@@ -90,13 +90,35 @@
     <string name="esami_sangue">Esami del Sangue</string>
 
 
-    <!--Parametri Activity-->
-    <string-array name="mean_parametri_selector">
+    <!--Parametri Valori Medi-->
+    <string-array name="mean_selector_names">
         <item>Ultimo Giorno</item>
         <item>Ultimi Tre Giorni</item>
         <item>Ultima Settimana</item>
         <item>Ultime Tre Settimane</item>
         <item>Ultimo mese</item>
+    </string-array>
+    <string-array name="mean_selector_ids">
+        <item>one_day</item>
+        <item>three_days</item>
+        <item>one_week</item>
+        <item>three_weeks</item>
+        <item>one_month</item>
+    </string-array>
+
+    <!-- Parametri Grafici-->
+    <string-array name="params_ids">
+        <item>press</item>
+        <item>glic</item>
+        <item>spo2</item>
+        <item>mass</item>
+    </string-array>
+
+    <string-array name="params_names">
+        <item>Pressione</item>
+        <item>Glicemia</item>
+        <item>SpO2</item>
+        <item>Massa</item>
     </string-array>
 
     <!-- Esami sangue-->

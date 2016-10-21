@@ -24,9 +24,9 @@ public class ParametriActivity extends AppCompatActivity {
 
 
         List<Fragment> fragments = new Vector<>();
-        fragments.add(Fragment.instantiate(this, ParametriValoriMedi.class.getName()));
-        fragments.add(Fragment.instantiate(this, ParametriValoriPuntuali.class.getName()));
-        fragments.add(Fragment.instantiate(this, ParametriGrafici.class.getName()));
+        fragments.add(Fragment.instantiate(this, ParametriValoriMediFragment.class.getName()));
+        fragments.add(Fragment.instantiate(this, ParametriValoriPuntualiFragment.class.getName()));
+        fragments.add(Fragment.instantiate(this, ParametriGraficiFragment.class.getName()));
 
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(),fragments);
         final ViewPager pager = (ViewPager)findViewById(R.id.viewPager_parametri);

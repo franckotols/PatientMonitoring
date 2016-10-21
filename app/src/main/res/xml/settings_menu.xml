@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
         android:key="application_settings_provider"
@@ -15,5 +16,21 @@
         </EditTextPreference>
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="warnings_preference"
+        android:title="Gestione Avvisi">
+
+        <CheckBoxPreference
+            android:key="show_dialogs"
+            app:defaultValue="true"
+            android:title="Mostra Avvisi"
+            android:summary="Se deselezionato l'applicazione non mostrerà gli avvisi">
+        </CheckBoxPreference>
+
+
+    </PreferenceCategory>
+
+
 
 </PreferenceScreen>

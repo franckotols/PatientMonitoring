@@ -1,5 +1,6 @@
 package com.francesco.patientmonitoring;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -7,12 +8,14 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -129,15 +132,63 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 err_msg = err_stringa.substring(err_stringa_A, err_stringa_B);
                             }
                             if (err_msg.equals("wrong_params")) {
-                                Toast.makeText(LoginActivity.this, getString(R.string.toast_user_password_wrong), Toast.LENGTH_LONG).show();
+                                Boolean cb = pref.getBoolean("show_dialogs", false);
+                                if (cb.equals(true)){
+                                    AlertDialog.Builder wrongParamsAlert = new AlertDialog.Builder(LoginActivity.this);
+                                    wrongParamsAlert.setTitle("Attenzione!")
+                                            .setMessage(getString(R.string.toast_user_password_wrong))
+                                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialogInterface, int i) {
+                                                    dialogInterface.dismiss();
+                                                }
+                                            })
+                                            .create();
+                                    wrongParamsAlert.show();
+                                }
+                                else{
+                                    Toast.makeText(LoginActivity.this, getString(R.string.toast_user_password_wrong), Toast.LENGTH_LONG).show();
+                                }
                             }
                             if (err_msg.equals("no_server")) {
-                                Toast.makeText(LoginActivity.this, getString(R.string.toast_server_wrong), Toast.LENGTH_LONG).show();
+                                Boolean cb = pref.getBoolean("show_dialogs", false);
+                                if (cb.equals(true)) {
+                                    AlertDialog.Builder noServerAlert = new AlertDialog.Builder(LoginActivity.this);
+                                    noServerAlert.setTitle("Attenzione!")
+                                            .setMessage(getString(R.string.toast_server_wrong))
+                                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialogInterface, int i) {
+                                                    dialogInterface.dismiss();
+                                                }
+                                            })
+                                            .create();
+                                    noServerAlert.show();
+                                }
+                                else{
+                                    Toast.makeText(LoginActivity.this, getString(R.string.toast_server_wrong), Toast.LENGTH_LONG).show();
+                                }
                             }
 
                         }
                         else{
-                            Toast.makeText(LoginActivity.this, getString(R.string.toast_server_wrong), Toast.LENGTH_LONG).show();
+                            Boolean cb = pref.getBoolean("show_dialogs", false);
+                            if (cb.equals(true)) {
+                                AlertDialog.Builder noServerAlert = new AlertDialog.Builder(LoginActivity.this);
+                                noServerAlert.setTitle("Attenzione!")
+                                        .setMessage(getString(R.string.toast_server_wrong))
+                                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                dialogInterface.dismiss();
+                                            }
+                                        })
+                                        .create();
+                                noServerAlert.show();
+                            }
+                            else{
+                                Toast.makeText(LoginActivity.this, getString(R.string.toast_server_wrong), Toast.LENGTH_LONG).show();
+                            }
                         }
 
                         error.printStackTrace();
