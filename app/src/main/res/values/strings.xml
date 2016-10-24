@@ -45,6 +45,8 @@
     <string name="toast_user_password_wrong">Errore!\nUsername e/o password errati.</string>
     <string name="toast_server_wrong">Errore! Possibili cause:\nIndirizzo del server sbagliato;\nIl server è spento.</string>
     <string name="toast_login_succesful">Il login è andato a buon fine.</string>
+    <string name="remember_checkbox">Ricordami</string>
+    <string name="process_dialog_waiting">Attendere</string>
 
     <!-- Registration Activity -->
     <string name="first_line">Inserisci i campi</string>

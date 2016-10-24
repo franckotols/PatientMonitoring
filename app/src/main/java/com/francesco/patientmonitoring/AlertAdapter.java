@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +52,18 @@ public class AlertAdapter extends ArrayAdapter {
             alertHolder.tx_type = (TextView) row.findViewById(R.id.tv_type);
             alertHolder.tx_message = (TextView) row.findViewById(R.id.tv_message);
             alertHolder.cbRead = (CheckBox) row.findViewById(R.id.cb_read);
+            alertHolder.cbRead.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if (compoundButton.isChecked()) {
+                        Toast.makeText(getContext(), "checked", Toast.LENGTH_LONG).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getContext(), "not checked", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
 
             row.setTag(alertHolder);
         }
@@ -62,6 +76,10 @@ public class AlertAdapter extends ArrayAdapter {
         alertHolder.tx_date.setText(alerts.getDate());
         alertHolder.tx_type.setText(alerts.getType());
         alertHolder.tx_message.setText(alerts.getMessage());
+        String status = alerts.getRead_status();
+        if (status.equals("true")) {
+            alertHolder.cbRead.setChecked(true);
+        }
 
         return row;
     }

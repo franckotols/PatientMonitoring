@@ -1,5 +1,6 @@
 package com.francesco.patientmonitoring;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -35,12 +36,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     SharedPreferences pref;
+    private SharedPreferences loginPreferences;
+    private SharedPreferences.Editor loginPrefsEditor;
     //public final String REGISTER_URL = "http://192.168.173.1:9090";
     public static final String KEY_USERNAME = "Username";
     public static final String KEY_PASSWORD = "Password";
 
     private EditText etUsername;
     private EditText etPassword;
+    private CheckBox rememberCheckbox;
+    private Boolean saveLogin;
+
+
 
 
     @Override
@@ -52,6 +59,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
+        rememberCheckbox = (CheckBox)findViewById(R.id.remember_checkBox);
+        loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+        loginPrefsEditor = loginPreferences.edit();
+        saveLogin = loginPreferences.getBoolean("saveLogin",false);
+        if (saveLogin == true){
+            etUsername.setText(loginPreferences.getString("username",""));
+            etPassword.setText(loginPreferences.getString("password",""));
+            rememberCheckbox.setChecked(true);
+        }
+
+
         final TextView tvRegisterLink = (TextView) findViewById(R.id.tvRegisterLink);
         final Button bLogin = (Button) findViewById(R.id.bSignIn);
 
@@ -101,11 +119,25 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         final String username_string = etUsername.getText().toString();
         final String password_string = etPassword.getText().toString();
+        if (rememberCheckbox.isChecked()){
+            loginPrefsEditor.putBoolean("saveLogin",true);
+            loginPrefsEditor.putString("username", username_string);
+            loginPrefsEditor.putString("password", password_string);
+            loginPrefsEditor.commit();
+        }else{
+            loginPrefsEditor.clear();
+            loginPrefsEditor.commit();
+        }
         final String final_addr = url+"/authentication";
+        final ProgressDialog pd = new ProgressDialog(LoginActivity.this);
+        pd.setMessage(getString(R.string.process_dialog_waiting));
+        pd.show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, final_addr,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
+                        pd.dismiss();
 
                         Toast.makeText(LoginActivity.this, getString(R.string.toast_login_succesful), Toast.LENGTH_LONG).show();
                         Intent ii = new Intent (LoginActivity.this, HomeActivity.class);
@@ -117,6 +149,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+
+                        pd.dismiss();
 
                         NetworkResponse err_ = error.networkResponse;
                         //String display_err_user_msg="\n\n\nError in sending request.";
