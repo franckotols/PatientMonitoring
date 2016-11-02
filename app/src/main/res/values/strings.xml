@@ -126,6 +126,10 @@
     <!-- Esami sangue-->
     <string name="pes1string">Fragment1</string>
     <string name="pes2string">Fragment2</string>
+    <string name="title_activity_home_paziente_nav_drawer">HomePazienteNavDrawer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 
 </resources>

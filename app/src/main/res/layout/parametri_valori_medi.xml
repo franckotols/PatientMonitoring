@@ -5,8 +5,7 @@
             android:layout_height="match_parent"
             android:fillViewport="true"
               android:orientation="horizontal"
-            tools:context="com.francesco.patientmonitoring.ParametriActivity"
-            tools:showIn="@layout/activity_parametri">
+            tools:showIn="@layout/layout_parametri">
 
     <LinearLayout
         android:layout_width="0dp"

@@ -1,13 +1,13 @@
 package com.francesco.patientmonitoring;
 
-import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TabHost;
+
+import com.francesco.patientmonitoring.adapters.PagerAdapter;
 
 import java.util.List;
 import java.util.Vector;

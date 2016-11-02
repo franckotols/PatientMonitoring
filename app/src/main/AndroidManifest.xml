@@ -48,21 +48,18 @@
             android:name=".Altro"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity
-            android:name=".HomePaziente"
-            android:label="@string/home_label">
-        </activity>
-        <activity
-            android:name=".ParametriActivity"
-            android:label="@string/label_parametri"
-            android:parentActivityName=".HomePaziente">
-        </activity>
         <activity android:name=".DiarioMedico">
         </activity>
         <activity android:name=".EsamiSangue">
         </activity>
-        <activity android:name=".SettingsActivity"
-                  android:label="@string/title_activity_settings">
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings">
+        </activity>
+        <activity
+            android:name=".HomePazienteNavDrawer"
+            android:label="@string/title_activity_home_paziente_nav_drawer"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
