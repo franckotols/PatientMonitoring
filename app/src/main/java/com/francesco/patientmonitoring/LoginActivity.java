@@ -240,10 +240,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
 
-
-
-
-
     }
 
     @Override

@@ -77,7 +77,7 @@ public class Notifiche extends AppCompatActivity {
                         try {
 
                             JSONArray jsonArray = response.getJSONArray("results");
-                            String patient_name,date,type,message,status;
+                            String patient_name,date,type,message,status,id;
 
                             for(int i = 0; i < jsonArray.length(); i++){
                                 JSONObject jsonObj = jsonArray.getJSONObject(i);
@@ -86,8 +86,9 @@ public class Notifiche extends AppCompatActivity {
                                 type = jsonObj.getString("type");
                                 message = jsonObj.getString("message");
                                 status = jsonObj.getString("status");
+                                id = jsonObj.getString("id");
 
-                                Alerts alert = new Alerts(patient_name,date,type,message,status);
+                                Alerts alert = new Alerts(patient_name,date,type,message,status,id);
                                 alertAdapter.add(alert);
                             }
 

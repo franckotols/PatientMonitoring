@@ -1,6 +1,12 @@
 package com.francesco.patientmonitoring;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,14 +16,28 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Fra on 29/09/2016.
  */
 public class AlertAdapter extends ArrayAdapter {
+
     List list = new ArrayList();
+    public static final String KEY_ID_ALERT= "alert_id";
+    public static final String KEY_STATUS_ALERT = "alert_status";
+
     public AlertAdapter(Context context, int resource) {
         super(context, resource);
     }
@@ -43,6 +63,7 @@ public class AlertAdapter extends ArrayAdapter {
         View row;
         row = convertView;
         AlertHolder alertHolder;
+        final Alerts alerts =(Alerts) this.getItem(position);
         if(row == null){
             LayoutInflater layoutInflater = (LayoutInflater)this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = layoutInflater.inflate(R.layout.alert_list_layout,parent,false);
@@ -56,11 +77,13 @@ public class AlertAdapter extends ArrayAdapter {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                     if (compoundButton.isChecked()) {
-                        Toast.makeText(getContext(), "checked", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getContext(), "checked", Toast.LENGTH_LONG).show();
+                        sendParams(alerts.getId(),"checked");
                     }
                     else
                     {
-                        Toast.makeText(getContext(), "not checked", Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getContext(), "not checked", Toast.LENGTH_LONG).show();
+                        sendParams(alerts.getId(),"not_checked");
                     }
                 }
             });
@@ -71,7 +94,7 @@ public class AlertAdapter extends ArrayAdapter {
             alertHolder = (AlertHolder)row.getTag();
         }
 
-        Alerts alerts =(Alerts) this.getItem(position);
+
         alertHolder.tx_pat_name.setText(alerts.getPatient_name());
         alertHolder.tx_date.setText(alerts.getDate());
         alertHolder.tx_type.setText(alerts.getType());
@@ -89,5 +112,67 @@ public class AlertAdapter extends ArrayAdapter {
         TextView tx_pat_name,tx_date,tx_type,tx_message;
         CheckBox cbRead;
 
+    }
+
+    private void sendParams(final String id, final String status){
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getContext());
+        String url = pref.getString("service_provider", "");
+        final String final_addr = url+"/notifications";
+        final ProgressDialog pd = new ProgressDialog(getContext());
+        pd.setMessage(getContext().getString(R.string.process_dialog_waiting));
+        pd.show();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, final_addr,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        pd.dismiss();
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                        pd.dismiss();
+
+                        NetworkResponse err_ = error.networkResponse;
+                        //String display_err_user_msg="\n\n\nError in sending request.";
+                        if(err_ != null && err_.data != null) {
+                            //int err_status_code = err_.statusCode;
+                            //String err_status_code_str = ("" + err_status_code);
+                            String err_stringa = new String(err_.data);
+                            String err_msg = "";
+                            int err_stringa_A = err_stringa.indexOf("<p>");
+                            err_stringa_A = err_stringa_A + ("<p>").length();
+                            int err_stringa_B = err_stringa.indexOf("</p>");
+                            if (err_stringa_A > 0 && err_stringa_B > err_stringa_A && err_stringa_B <= err_stringa.length()) {
+                                err_msg = err_stringa.substring(err_stringa_A, err_stringa_B);
+                            }
+                            if (err_msg.equals("wrong_params")) {
+                                Toast.makeText(getContext(), "no params", Toast.LENGTH_SHORT).show();
+                            }
+                            if (err_msg.equals("no_server")) {
+                                Toast.makeText(getContext(), "no server", Toast.LENGTH_SHORT).show();
+                            }
+                                                    }
+                        else{
+                            Toast.makeText(getContext(), "other", Toast.LENGTH_SHORT).show();
+                        }
+
+                        error.printStackTrace();
+
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put(KEY_ID_ALERT, id);
+                params.put(KEY_STATUS_ALERT, status);
+                return params;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
     }
 }

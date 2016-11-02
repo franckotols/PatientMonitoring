@@ -74,7 +74,7 @@
     <!-- Home activity-->
     <string name="title_first_tab">Notifiche</string>
     <string name="title_second_tab">Ricerca Paziente</string>
-    <string name="title_third_tab">Altro</string>
+    <string name="title_third_tab">Agenda</string>
 
     <!-- Search Patient activity-->
     <string name="title_patient_disease">Seleziona le patologie di interesse</string>

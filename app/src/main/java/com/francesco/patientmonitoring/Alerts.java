@@ -5,15 +5,16 @@ package com.francesco.patientmonitoring;
  */
 public class Alerts {
 
-    private String patient_name, date, type, message, read_status;
+    private String patient_name, date, type, message, read_status,id;
 
 
-    public Alerts(String patient_name, String date, String type, String message, String read_status) {
+    public Alerts(String patient_name, String date, String type, String message, String read_status, String id) {
         this.patient_name = patient_name;
         this.date = date;
         this.type = type;
         this.message = message;
         this.read_status = read_status;
+        this.id = id;
     }
 
     public String getPatient_name() {
@@ -54,5 +55,13 @@ public class Alerts {
 
     public void setRead_status(String read_status) {
         this.read_status = read_status;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
