@@ -43,8 +43,9 @@
     <string name="log_text_accedi">Accedi</string>
     <string name="log_text_registra">Registrati</string>
     <string name="toast_user_password_wrong">Errore!\nUsername e/o password errati.</string>
-    <string name="toast_server_wrong">Errore! Possibili cause:\nIndirizzo del server sbagliato;\nIl server è spento.</string>
+    <string name="toast_server_wrong">Errore! Possibili cause:\nIndirizzo del server sbagliato;\nIl server è spento;\nAssenza connessione Internet</string>
     <string name="toast_login_succesful">Il login è andato a buon fine.</string>
+    <string name="attention_message">Attenzione!</string>
     <string name="remember_checkbox">Ricordami</string>
     <string name="process_dialog_waiting">Attendere</string>
 
@@ -70,6 +71,9 @@
 
     <!-- VisualizzaRiepilogo activity -->
     <string name="text_reg_button">Registra</string>
+    <string name="utente_registrato_message">Utente già registrato</string>
+    <string name="different_password">La password di controllo non corrisponde a quella inserita!</string>
+    <string name="informations_missing">I campi obbligatori non sono stati tutti compilati!</string>
 
     <!-- Home activity-->
     <string name="title_first_tab">Notifiche</string>
@@ -77,8 +81,10 @@
     <string name="title_third_tab">Agenda</string>
 
     <!-- Search Patient activity-->
-    <string name="title_patient_disease">Seleziona le patologie di interesse</string>
+    <string name="title_patient_disease">Seleziona le patologie di interesse:</string>
     <string name="title_patient_name">Nome paziente</string>
+    <string name="subtitle_patient_name">(*  Devono essere rispettate le lettere maiuscole iniziali nel nome e nel cognome)</string>
+    <string name="advice_checkbox_deseases">Selezionando una patologia senza\ninserire il nome vengono selezionati\ntutti i pazienti con quella patologia</string>
     <string name="hint_patient_name">Inserisci nome paziente</string>
     <string name="button_search">Cerca</string>
 

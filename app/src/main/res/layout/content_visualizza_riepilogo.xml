@@ -6,7 +6,7 @@
             android:layout_height="match_parent"
             android:fillViewport="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context="com.francesco.patientmonitoring.VisualizzaRiepilogo"
+            tools:context=".activities.VisualizzaRiepilogo"
             tools:showIn="@layout/activity_visualizza_riepilogo">
 
     <RelativeLayout
@@ -20,7 +20,7 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context="com.francesco.patientmonitoring.VisualizzaRiepilogo"
+        tools:context=".activities.VisualizzaRiepilogo"
         tools:showIn="@layout/activity_visualizza_riepilogo"
         android:id="@+id/contenuto">
 
@@ -115,15 +115,6 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="71dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=""
-            android:id="@+id/riep_response"
-            android:layout_below="@+id/registra"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="34dp"/>
 
 
     </RelativeLayout>

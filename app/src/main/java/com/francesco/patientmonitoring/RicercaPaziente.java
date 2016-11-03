@@ -1,7 +1,10 @@
 package com.francesco.patientmonitoring;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -142,10 +145,15 @@ public class RicercaPaziente extends AppCompatActivity implements View.OnClickLi
         }
 
         final String final_addr = url + "/searchPatient";
+        final ProgressDialog pd = new ProgressDialog(RicercaPaziente.this);
+        pd.setMessage(getString(R.string.process_dialog_waiting));
+        pd.show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, final_addr,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
+                        pd.dismiss();
 
                         try {
                             //trasforma la stringa in oggetto json
@@ -180,6 +188,7 @@ public class RicercaPaziente extends AppCompatActivity implements View.OnClickLi
                     @Override
                     public void onErrorResponse(VolleyError error) {
 
+                        pd.dismiss();
                         NetworkResponse err_ = error.networkResponse;
                         //String display_err_user_msg="\n\n\nError in sending request.";
                         if(err_ != null && err_.data != null) {
@@ -198,11 +207,30 @@ public class RicercaPaziente extends AppCompatActivity implements View.OnClickLi
                                 err_msg = err_stringa.substring(err_stringa_A, err_stringa_B);
                             }
                             if (err_msg.equals("no_selected")) {
-                                Toast.makeText(RicercaPaziente.this, getString(R.string.toast_no_patient), Toast.LENGTH_LONG).show();
+                                AlertDialog.Builder wrongParamsAlert = new AlertDialog.Builder(RicercaPaziente.this);
+                                wrongParamsAlert.setTitle(getString(R.string.attention_message))
+                                        .setMessage(getString(R.string.toast_no_patient))
+                                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                dialogInterface.dismiss();
+                                            }
+                                        })
+                                        .create();
+                                wrongParamsAlert.show();
                             }
                             if (err_msg.equals("no_server")) {
-                                Toast.makeText(RicercaPaziente.this, getString(R.string.toast_no_server), Toast.LENGTH_LONG).show();
-                            }
+                                AlertDialog.Builder wrongParamsAlert = new AlertDialog.Builder(RicercaPaziente.this);
+                                wrongParamsAlert.setTitle(getString(R.string.attention_message))
+                                        .setMessage(getString(R.string.toast_no_server))
+                                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                dialogInterface.dismiss();
+                                            }
+                                        })
+                                        .create();
+                                wrongParamsAlert.show();}
                         }
                         else{
                             Toast.makeText(RicercaPaziente.this, error.toString(), Toast.LENGTH_LONG).show();

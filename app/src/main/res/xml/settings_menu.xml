@@ -17,19 +17,7 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="warnings_preference"
-        android:title="Gestione Avvisi">
 
-        <CheckBoxPreference
-            android:key="show_dialogs"
-            app:defaultValue="true"
-            android:title="Mostra Avvisi"
-            android:summary="Se deselezionato l'applicazione non mostrerà gli avvisi">
-        </CheckBoxPreference>
-
-
-    </PreferenceCategory>
 
 
 

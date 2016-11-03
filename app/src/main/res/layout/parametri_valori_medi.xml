@@ -1,81 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
-              android:orientation="horizontal"
-            tools:showIn="@layout/layout_parametri">
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="@drawable/my_curstom_border">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:fillViewport="true"
+                  android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/patient"
-            style="?android:listSeparatorTextViewStyle"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/name"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_nomePaziente"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_marginLeft="20dp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/city"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_cittàPaziente"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_marginLeft="20dp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/birthdate"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_birthPaziente"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_marginLeft="20dp"/>
-        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -101,18 +37,10 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/mean_values_search"
             android:text="Cerca"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="@drawable/my_curstom_border">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -185,7 +113,7 @@
                 android:text="bo"/>
 
         </LinearLayout>
+
     </LinearLayout>
 
-
-</LinearLayout>
+</ScrollView>

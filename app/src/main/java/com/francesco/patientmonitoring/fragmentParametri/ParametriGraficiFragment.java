@@ -37,9 +37,9 @@ import java.util.Map;
  */
 public class ParametriGraficiFragment extends Fragment {
 
-    TextView tvNome;
-    TextView tvCity;
-    TextView tvBirthdate;
+    //TextView tvNome;
+    //TextView tvCity;
+    //TextView tvBirthdate;
     Spinner paramSelectorSpinner;
     Button searchButton;
     SpinnerParams p;
@@ -62,12 +62,12 @@ public class ParametriGraficiFragment extends Fragment {
         final String city = i.getStringExtra("città");
         final String birthdate = i.getStringExtra("data_di_nascita");
         final String id_pat = i.getStringExtra("id");
-        tvNome = (TextView)rootview.findViewById(R.id.tv_nomePaziente);
-        tvCity = (TextView)rootview.findViewById(R.id.tv_cittàPaziente);
-        tvBirthdate = (TextView)rootview.findViewById(R.id.tv_birthPaziente);
-        tvNome.setText(nome);
-        tvCity.setText(city);
-        tvBirthdate.setText(birthdate);
+        //tvNome = (TextView)rootview.findViewById(R.id.tv_nomePaziente);
+        //tvCity = (TextView)rootview.findViewById(R.id.tv_cittàPaziente);
+        //tvBirthdate = (TextView)rootview.findViewById(R.id.tv_birthPaziente);
+        //tvNome.setText(nome);
+        //tvCity.setText(city);
+        //tvBirthdate.setText(birthdate);
 
         /*
          * Spinner Configuration

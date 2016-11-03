@@ -36,9 +36,9 @@ import java.util.Map;
  */
 public class ParametriValoriMediFragment extends Fragment {
 
-    TextView tvNome;
-    TextView tvCity;
-    TextView tvBirthdate;
+    //TextView tvNome;
+    //TextView tvCity;
+    //TextView tvBirthdate;
     Button searchButton;
     Spinner meanSelectorSpinner;
     SpinnerParams p;
@@ -62,12 +62,12 @@ public class ParametriValoriMediFragment extends Fragment {
         final String city = i.getStringExtra("città");
         final String birthdate = i.getStringExtra("data_di_nascita");
         final String id_pat = i.getStringExtra("id");
-        tvNome = (TextView)rootview.findViewById(R.id.tv_nomePaziente);
-        tvCity = (TextView)rootview.findViewById(R.id.tv_cittàPaziente);
-        tvBirthdate = (TextView)rootview.findViewById(R.id.tv_birthPaziente);
-        tvNome.setText(nome);
-        tvCity.setText(city);
-        tvBirthdate.setText(birthdate);
+        //tvNome = (TextView)rootview.findViewById(R.id.tv_nomePaziente);
+        //tvCity = (TextView)rootview.findViewById(R.id.tv_cittàPaziente);
+        //tvBirthdate = (TextView)rootview.findViewById(R.id.tv_birthPaziente);
+        //tvNome.setText(nome);
+        //tvCity.setText(city);
+        //tvBirthdate.setText(birthdate);
         /*
          * Spinner Configuration
          */
@@ -116,7 +116,7 @@ public class ParametriValoriMediFragment extends Fragment {
 
         pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String url = pref.getString("service_provider", "");
-        final String final_addr = url+"/test";
+        final String final_addr = url+"/parametri/valorimedi";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, final_addr,
                 new Response.Listener<String>() {
                     @Override

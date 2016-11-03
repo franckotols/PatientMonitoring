@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.francesco.patientmonitoring.fragmentDiarioClinico.DiarioMainFragment;
 import com.francesco.patientmonitoring.fragmentParametri.ParametriMainFragment;
 
 public class HomePazienteNavDrawer extends AppCompatActivity
@@ -80,6 +81,7 @@ public class HomePazienteNavDrawer extends AppCompatActivity
             startActivity(settingsIntent);
         }
 
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -105,7 +107,9 @@ public class HomePazienteNavDrawer extends AppCompatActivity
                 setTitle(s);
                 break;
             case R.id.nav_menu2:
-                //fragment = new Menu2();
+                fragment = new DiarioMainFragment();
+                String s2 = "Diario Clinico: "+nome;
+                setTitle(s2);
                 break;
 
         }

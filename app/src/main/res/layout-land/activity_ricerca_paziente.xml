@@ -30,9 +30,12 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/advice_checkbox_deseases"/>
 
     </LinearLayout>
 
@@ -53,6 +56,10 @@
             android:layout_height="wrap_content"
             android:text="@string/title_patient_name"
             android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtitle_patient_name"/>
 
         <EditText
             android:layout_width="match_parent"

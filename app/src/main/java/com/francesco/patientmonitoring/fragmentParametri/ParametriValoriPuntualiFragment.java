@@ -32,9 +32,9 @@ import java.util.Map;
  */
 public class ParametriValoriPuntualiFragment extends Fragment {
 
-    TextView tvNome;
-    TextView tvCity;
-    TextView tvBirthdate;
+    //TextView tvNome;
+    //TextView tvCity;
+    //TextView tvBirthdate;
     SharedPreferences pref;
     DatePicker dateP;
     Button searchDayButton;
@@ -51,12 +51,12 @@ public class ParametriValoriPuntualiFragment extends Fragment {
         final String city = i.getStringExtra("città");
         final String birthdate = i.getStringExtra("data_di_nascita");
         final String id_pat = i.getStringExtra("id");
-        tvNome = (TextView)rootview.findViewById(R.id.tv_nomePaziente);
-        tvCity = (TextView)rootview.findViewById(R.id.tv_cittàPaziente);
-        tvBirthdate = (TextView)rootview.findViewById(R.id.tv_birthPaziente);
-        tvNome.setText(nome);
-        tvCity.setText(city);
-        tvBirthdate.setText(birthdate);
+        //tvNome = (TextView)rootview.findViewById(R.id.tv_nomePaziente);
+        //tvCity = (TextView)rootview.findViewById(R.id.tv_cittàPaziente);
+        //tvBirthdate = (TextView)rootview.findViewById(R.id.tv_birthPaziente);
+        //tvNome.setText(nome);
+        //tvCity.setText(city);
+        //tvBirthdate.setText(birthdate);
         dateP = (DatePicker)rootview.findViewById(R.id.params_day);
         searchDayButton = (Button)rootview.findViewById(R.id.search_date2);
         searchDayButton.setOnClickListener(new View.OnClickListener() {
