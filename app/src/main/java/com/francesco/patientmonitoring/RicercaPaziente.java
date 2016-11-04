@@ -235,6 +235,7 @@ public class RicercaPaziente extends AppCompatActivity implements View.OnClickLi
                         else{
                             Toast.makeText(RicercaPaziente.this, error.toString(), Toast.LENGTH_LONG).show();
                         }
+                        checked_disease.clear();
 
                     }
                 }) {

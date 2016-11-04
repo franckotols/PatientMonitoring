@@ -141,64 +141,14 @@ public class ParametriValoriMediFragment extends Fragment {
                             if (err_stringa_A > 0 && err_stringa_B > err_stringa_A && err_stringa_B <= err_stringa.length()) {
                                 err_msg = err_stringa.substring(err_stringa_A, err_stringa_B);
                             }
-                            if (err_msg.equals("wrong_params")) {
-                                Boolean cb = pref.getBoolean("show_dialogs", false);
-                                if (cb.equals(true)){
-                                    AlertDialog.Builder wrongParamsAlert = new AlertDialog.Builder(getActivity());
-                                    wrongParamsAlert.setTitle("Attenzione!")
-                                            .setMessage("Not succesfull Request")
-                                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialogInterface, int i) {
-                                                    dialogInterface.dismiss();
-                                                }
-                                            })
-                                            .create();
-                                    wrongParamsAlert.show();
-                                }
-                                else{
-                                    Toast.makeText(getActivity(), getString(R.string.toast_user_password_wrong), Toast.LENGTH_LONG).show();
-                                }
+                            if (err_msg.equals("error")) {
+                                Toast.makeText(getActivity(), "bad request", Toast.LENGTH_LONG).show();
                             }
-                            if (err_msg.equals("no_server")) {
-                                Boolean cb = pref.getBoolean("show_dialogs", false);
-                                if (cb.equals(true)) {
-                                    AlertDialog.Builder noServerAlert = new AlertDialog.Builder(getActivity());
-                                    noServerAlert.setTitle("Attenzione!")
-                                            .setMessage("server is down")
-                                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialogInterface, int i) {
-                                                    dialogInterface.dismiss();
-                                                }
-                                            })
-                                            .create();
-                                    noServerAlert.show();
-                                }
-                                else{
-                                    Toast.makeText(getActivity(), getString(R.string.toast_server_wrong), Toast.LENGTH_LONG).show();
-                                }
-                            }
+
 
                         }
                         else{
-                            Boolean cb = pref.getBoolean("show_dialogs", false);
-                            if (cb.equals(true)) {
-                                AlertDialog.Builder noServerAlert = new AlertDialog.Builder(getActivity());
-                                noServerAlert.setTitle("Attenzione!")
-                                        .setMessage(getString(R.string.toast_server_wrong))
-                                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialogInterface, int i) {
-                                                dialogInterface.dismiss();
-                                            }
-                                        })
-                                        .create();
-                                noServerAlert.show();
-                            }
-                            else{
-                                Toast.makeText(getActivity(), getString(R.string.toast_server_wrong), Toast.LENGTH_LONG).show();
-                            }
+                            Toast.makeText(getActivity(), "bad request", Toast.LENGTH_LONG).show();
                         }
 
                         error.printStackTrace();

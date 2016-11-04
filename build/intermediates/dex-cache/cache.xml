@@ -1,3 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_ff6caa5fc0582a8b6bd2e6a998a28249d94c6f9b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_85f75716cbb53180b368eeeb0eba42722f64019d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_28c832f634b01a0f52bbfa6ca2d3b8c95c882bfe\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_d63af0737848fa4334f958a2168b3de6731b72b1\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_1e5bdd96f1d8dc7562aaa491b03239ed112650cc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\design\24.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.0_64cab9a815fe852a15c7266f71929c7e1c48f870\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8cf325b7afad4d04adc3de3d5a9a2e73e1bdaae4">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_9d7c77640459a06fa1919061d8079f07b572fcdf\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\.gradle\caches\modules-2\files-2.1\com.mcxiaoke.volley\library\1.0.19\a8f23f65fc1e522ee4a1a697ee569901a46741fa\library-1.0.19.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a8f23f65fc1e522ee4a1a697ee569901a46741fa">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\library-1.0.19_1fb2646a64b6b2d3e88a7e8dc4e4fdd8f2b5f241\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\android-sdks\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_d4a19aecc873240a561f6131bd9c3e7ad98fb739\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_66102f3d3f023f4f5d6609c617d7a15ba43a727a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c6bda2537021798ea6654b06da6907fe9e9b03af">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8771a24a602090c1225723d53b11ff15b0560423\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_7093632a27e902517f67f05daea1d7e47c3f7c23\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_4e822f93853f1c8c5b616313941c9e48cd78850c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_b4a91fb8c925495d01fc72290f9636404bd3b4dc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_16a3a0d2a6c91521694664ffeef3eef0b0f49865\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_83f03946bcb10140d68e52993b61a0aa044c74bc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\preference-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="eb5d8b5c47b4e5c0184a7986a26bc12cfc51cde3">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-preference-v7-24.2.1_81a07113fbe553153917a86bf0365aa2e0527c13\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_f3550a8827cfc33676c7157cad4ea37ec20dafe9\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_c98490ccd2b524787ee1b21c96ce3aa0610c4baa\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_a91b2be644d357c069498830a419764f20466a0f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\Fra\patientmonitoring\PatientMonitoring\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_8f0f1e261d5bf70a20042184e274b34bf1f96028\classes.dex" />
+    </item>
+
+</items>
